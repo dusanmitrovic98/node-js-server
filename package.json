@@ -1,12 +1,10 @@
 {
   "name": "ts-server",
   "version": "1.0.0",
-  "description": "Node.js, TypeScript and Express server.",
-  "main": "index.ts",
+  "description": "Node.js and Express server.",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node ./dist/index.js",
-    "dev": "ts-node-dev ./index.ts"
+    "start": "node ./index.js"
   },
   "keywords": [],
   "author": "",
