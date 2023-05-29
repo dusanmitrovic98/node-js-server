@@ -5,12 +5,13 @@ import {
   PATH_VIEW_INDEX,
   PATH_SSL_KEY,
   PATH_SSL_CERT,
-} from "./public/utility/constants/server";
+} from "./public/utility/constants/server.mjs";
 import express from "express";
 import * as path from "path";
 import https from "https";
 import fs from "fs";
 
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app = express();
 
 app.use(express.json());

@@ -1,10 +1,10 @@
 {
-  "name": "ts-server",
+  "name": "js-server",
   "version": "1.0.0",
   "description": "Node.js and Express server.",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node --experimental-modules index.mjs"
   },
   "keywords": [],
   "author": "",

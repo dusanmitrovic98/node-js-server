@@ -1,4 +1,4 @@
-import { ipv4 } from "../network/ipv4-info";
+import { ipv4 } from "../network/ipv4-info.mjs";
 
 // Server
 export const IP_ADDRESS = ipv4;
