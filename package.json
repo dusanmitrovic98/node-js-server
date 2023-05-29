@@ -4,7 +4,7 @@
   "description": "Node.js and Express server.",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-modules index.mjs"
+    "start": "node index.mjs"
   },
   "keywords": [],
   "author": "",

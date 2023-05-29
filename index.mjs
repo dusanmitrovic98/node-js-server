@@ -28,7 +28,7 @@ app.get("/", async (req, res) => {
 });
 
 try {
-  https.createServer(options, app).listen(PORT, IP_ADDRESS + "", () => {
+  https.createServer(options, app).listen(PORT + "", IP_ADDRESS, () => {
     console.log(`Server url: https://${IP_ADDRESS}:${PORT}`);
   });
 } catch (error) {
