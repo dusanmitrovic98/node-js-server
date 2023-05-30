@@ -8,4 +8,4 @@ Node.js and Express server.
 2. cd node-js-server
 3. npm install
 4. Create .env place it along app.js and update it with "PORT=value" and desired value
-5. npm run dev
+5. npm run start
