@@ -2,6 +2,7 @@ import {
   PATH_SSL_KEY,
   PATH_SSL_CERT,
   IP_ADDRESS,
+  DEFAULT_PORT,
 } from "./src/utility/constants/server.js";
 import "dotenv/config.js";
 import express from "express";
@@ -26,7 +27,7 @@ app.get("/", (req, res) => {
 });
 
 try {
-  let PORT = process.env.PORT || 3000;
+  let PORT = process.env.PORT || DEFAULT_PORT;
 
   https
     .createServer(options, app)

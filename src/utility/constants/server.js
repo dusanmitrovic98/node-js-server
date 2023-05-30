@@ -2,6 +2,7 @@ import { ipv4 } from "../network/ipv4-info.js";
 
 // Server
 export const IP_ADDRESS = ipv4;
+export const DEFAULT_PORT = "3000";
 
 // Directories
 export const DIRECTORY_SOURCE = "src";
