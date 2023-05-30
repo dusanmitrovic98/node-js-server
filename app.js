@@ -3,13 +3,20 @@ import {
   PATH_SSL_CERT,
   IP_ADDRESS,
   DEFAULT_PORT,
+  DIRECTORY_SOURCE,
+  PATH_VIEW_INDEX,
 } from "./src/utility/constants/server.js";
-import "dotenv/config.js";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 import express from "express";
+import * as path from "path";
 import dotenv from "dotenv";
 import https from "https";
 import cors from "cors";
 import fs from "fs";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 dotenv.config();
 
@@ -18,6 +25,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "..", DIRECTORY_SOURCE)));
 
 const options = {
   key: fs.readFileSync(PATH_SSL_KEY),
@@ -25,7 +33,7 @@ const options = {
 };
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
 });
 
 try {
