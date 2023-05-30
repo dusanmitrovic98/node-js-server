@@ -1,4 +1,8 @@
-import { PATH_SSL_KEY, PATH_SSL_CERT } from "./src/utility/constants/server.js";
+import {
+  PATH_SSL_KEY,
+  PATH_SSL_CERT,
+  IP_ADDRESS,
+} from "./src/utility/constants/server.js";
 import "dotenv/config.js";
 import cors from "cors";
 import express from "express";
@@ -21,8 +25,8 @@ app.get("/", (req, res) => {
 try {
   https
     .createServer(options, app)
-    .listen(process.env.PORT, () =>
-      console.log(`Server url: https://localhost:${process.env.PORT}`)
+    .listen(process.env.PORT, IP_ADDRESS, () =>
+      console.log(`Server url: https://${IP_ADDRESS}:${process.env.PORT}`)
     );
 } catch (error) {
   console.log(`Error caught: ${error}`);
