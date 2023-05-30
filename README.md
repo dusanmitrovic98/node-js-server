@@ -9,3 +9,4 @@ Node.js and Express server.
 3. npm install
 4. Create .env place it along app.js and update it with "PORT=value" and desired value
 5. npm run start
+6. (optional) Create ./src/modules
