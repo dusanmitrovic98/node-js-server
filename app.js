@@ -4,10 +4,13 @@ import {
   IP_ADDRESS,
 } from "./src/utility/constants/server.js";
 import "dotenv/config.js";
-import cors from "cors";
 import express from "express";
+import dotenv from "dotenv";
 import https from "https";
+import cors from "cors";
 import fs from "fs";
+
+dotenv.config();
 
 const app = express();
 
@@ -23,10 +26,12 @@ app.get("/", (req, res) => {
 });
 
 try {
+  let PORT = process.env.PORT || 3000;
+
   https
     .createServer(options, app)
-    .listen(process.env.PORT, IP_ADDRESS, () =>
-      console.log(`Server url: https://${IP_ADDRESS}:${process.env.PORT}`)
+    .listen(PORT, IP_ADDRESS, () =>
+      console.log(`Server url: https://${IP_ADDRESS}:${PORT}`)
     );
 } catch (error) {
   console.log(`Error caught: ${error}`);
