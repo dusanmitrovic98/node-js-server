@@ -16,6 +16,8 @@ dotenv.config();
 const app = express();
 
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const options = {
   key: fs.readFileSync(PATH_SSL_KEY),
